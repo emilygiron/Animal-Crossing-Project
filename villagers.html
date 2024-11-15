@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	
+	<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+	<script type="text/javascript" src='index.js'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">   
+    <title>Species</title>
+  </head>
+  
+  <body onload="initViz2();">
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="home.html"><img src="tom nook.jpg" style="width:70px; height:70px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active" >
+        <a class="nav-link" href="villagers.html">Species</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="villagers2.html">Villagers</a>
+      </li>
+       
+    </ul>
+      
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+      
+      <main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron" style="background-image: url('leaf.png');">
+      
+    <div class="container">
+        
+      <h1 class="display-3" style="background-color:white; padding:20px; text-align:center;">Species</h1>
+	  <br>
+    </div>
+  </div>
+
+  <div class="container">
+  <img src="species.jpg" style="float:left; width:600px; height:350px; padding-right:30px;">
+  <p>One characteristic of villagers is that they come in all kinds of species. For example, there are horses, birds, cats, dogs, and many more species
+  like in the real world. So, I wanted to see which species is the most expensive in bells, which is the main currency in the game, and in NMTS (which
+  is less common in the game). On top of that, you are able to see the average bells and NMTs per species based on gender as well. You can also filter based
+  on personality type as well. Each personality type is exclusive to one gender. The male personality type are: smug, lazy, jock, and cranky. The female
+  personality type are: peppy, snooty, normal, and big sister.
+  </p>
+  <br>
+  <br>
+   <br>
+  <br>
+		<div id="controls">
+		<p id ="currency">Select a Currency</p>
+		<button class="tablink nav-active" onclick="openDiv(event, 'Bells'); switchView('Average bells per villager by Species')" >Bells</button>
+		<button class="tablink" onclick="openDiv(event, 'Bells'); switchView('Average NMTs per species')">NMTs</button>
+		<br>
+		
+		
+		
+		<h3> Select a Personality Type </h3>
+		<select id="changeSpecies"  onchange="filterPersonality(value); console.log(value);">
+			<option selected="selected">Select a Personality type</option>
+			<option value="All">All</option>
+			<option value="Big Sister">Big Sister</option>
+			<option value="Cranky">Cranky</option>
+			<option value="Jock">Jock</option>
+			<option value="Lazy">Lazy</option>
+			<option value="Normal">Normal</option>
+			<option value="Peppy">Peppy</option>
+			<option value="Smug">Smug</option>
+			<option value="Snooty">Snooty</option>
+			
+		
+					
+		</select>
+		</div>
+		
+    
+   
+		<div id='Bells' class='tab'> 
+			<div id = 'vizContainer'> </div>
+		
+		</div>
+		
+		</div>
+		 <br>
+   </div>
+   
+      
+     
+      
+      <hr>
+
+  <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>&copy; Emily Giron 2021</p>
+    
+   
+ 
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

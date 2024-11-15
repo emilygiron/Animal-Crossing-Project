@@ -1,0 +1,77 @@
+	
+		.tab{
+		margin: 0;
+		width: 80%;
+		height: 80%;
+		
+		}
+		button{
+		float:right;
+		padding: 12px;
+		color:black;
+		font-size: 15px;
+		border: none;
+		
+		margin-left: auto;
+		margin-right: auto; 
+		}
+		button:hover{
+		background-color: #67e689;
+		color:white;
+		cursor:pointer;
+		}
+		.nav-active{
+		background-color:lightblue;
+		}
+		#controls1{
+		display:flex;
+		justify-content: space-between;
+		width:100%;
+		padding:20px;
+		height:100%;
+		margin-left: auto;
+		margin-right: auto;	
+		}
+		#controls{
+		
+		width:100%;
+		padding:20px;
+		height:100%;
+		
+		margin-left: auto;
+		margin-right: auto;
+		}
+		h3{
+		color:#31a34f;
+		text-align:center;
+		}
+		
+		select{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		}
+		
+		#vizContainer{
+		
+		width:100%;
+		margin-left: auto;
+		margin-right: auto;
+		}
+		.tab{
+		
+		width:100%;
+		margin-left: auto;
+		margin-right: auto;	
+		}
+		
+		iframe{
+		margin-left: auto;
+		margin-right: auto;
+		}
+		#currency{
+		text-align:right;
+		color: gray;
+		}
+		
+	

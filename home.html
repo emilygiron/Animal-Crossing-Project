@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+	<script type="text/javascript" src='index.js'></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">   
+    <title>Home</title>
+  </head>
+  <body onload="initViz3();">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" href="home.html"><img src="tom nook.jpg" style="width:70px; height:70px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="villagers.html">Species</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="villagers2.html">Villagers</a>
+      </li>
+ 
+       
+    </ul>
+      
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+      
+      <main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron" style="background-image: url('leaf.png');">
+      
+    <div class="container">
+        
+      <h1 class="display-3" style="background-color:white; padding:20px; text-align:center;">Welcome to the Animal Crossing Website!</h1>
+    </div>
+  </div>
+
+  <div class="container">
+      
+	  <img src="banner.jpg" style="float:left; width:650px; height:400px; padding-right:30px;">
+      <p>In this website, I will be talking and presenting datasets about a popular video game called Animal Crossing: New Horizons. 
+		 Specifically, I will be talking about the data behind all 391 villagers of ACNH (before the 2.0 update).
+		 Villagers are these cute characters that you can have in your game and they come with many characteristics like different species,
+		 gender, birthdays, catchphrases, hobbies, and many more.
+	  </p>
+	  <p>
+		<p>
+		With this in mind, I came to the question of who is the most expensive villager? Most animal crossing players pay (using bells or Nook Mile Tickets) for specific villagers
+		based on these characteristics.
+		</p>
+		 The first dataset I used is from <a href="https://www.kaggle.com/jessicali9530/animal-crossing-new-horizons-nookplaza-dataset?select=villagers.csv"> kaggle </a>, 
+		 it is a list of all villagers and their characteristics in Animal Crossing before the 2.0 update. 
+	  </p>
+		<p>
+		 The second dataset I used is from a <a href = "https://docs.google.com/spreadsheets/d/1TiW1di0Wuv7VVYZncRxAreB6VdZ39LuuyzkDmFFE2Uc/edit#gid=1259541227">
+		 popular villager tier list</a> that had the data of actual users inputting what villager they sold for bells. Just a disclaimer that this
+		 google spreadsheet is live so as more users input more data, the visuals will not change.
+		 </p>
+		 
+		 <h3>Catchphrases</h3>
+		 <p>Just for fun, below are all the catchphrases that villagers uses in the game. Catchphrases are excatly what you think of,
+			it is a unique saying that people say they speak. Villagers are the same way, they all say a unique syaing when they talk but some
+			catchphrases are used more than once.</p>
+		
+		  <div class="container">
+		  <div id="controls1">
+		 <select id="changeSpecies"  onchange="speciesFilter(value); console.log(value);">
+			<option selected="selected">Select a Species</option>
+			<option value="All">All</option>
+			<option value="Alligator">Alligator</option>
+			<option value="Anteater">Anteater</option>
+			<option value="Bear">Bear</option>
+			<option value="Bird">Bird</option>
+			<option value="Bull">Bull</option>
+			<option value="Cat">Cat</option>
+			<option value="Chicken">Chicken</option>
+			<option value="Cow">Cow</option>
+			<option value="Cub">Cub</option>
+			<option value="Deer">Deer</option>
+			<option value="Dog">Dog</option>
+			<option value="Duck">Duck</option>
+			<option value="Eagle">Eagle</option>
+			<option value="Elephant">Elephant</option>
+			<option value="Frog">Frog</option>
+			<option value="Goat">Goat</option>
+			<option value="Gorilla">Gorilla</option>
+			<option value="Hamster">Hamster</option>
+			<option value="Hippo">Hippo</option>
+			<option value="Horse">Horse</option>
+			<option value="Kangaroo">Kangaroo</option>
+			<option value="Koala">Koala</option>
+			<option value="Lion">Lion</option>
+			<option value="Monkey">Monkey</option>
+			<option value="Mouse">Mouse</option>
+			<option value="Octopus">Octopus</option>
+			<option value="Ostrich">Ostrich</option>
+			<option value="Peguin">Peguin</option>
+			<option value="Pig">Pig</option>
+			<option value="Rabbit">Rabbit</option>
+			<option value="Rhino">Rhino</option>
+			<option value="Sheep">Sheep</option>
+			<option value="Squirrel">Squirrel</option>
+			<option value="Tiger">Tiger</option>
+			<option value="Wolf">Wolf</option>
+					
+		</select>
+		&nbsp;
+		
+			<select id="changeSpecies"  onchange="filterPersonality(value); console.log(value);">
+			<option selected="selected">Select a Personality type</option>
+			<option value="All">All</option>
+			<option value="Big Sister">Big Sister</option>
+			<option value="Cranky">Cranky</option>
+			<option value="Jock">Jock</option>
+			<option value="Lazy">Lazy</option>
+			<option value="Normal">Normal</option>
+			<option value="Peppy">Peppy</option>
+			<option value="Smug">Smug</option>
+			<option value="Snooty">Snooty</option>
+			
+		
+					
+		</select>
+		 
+		 	</div>
+		 <div id = 'vizContainer'> </div>
+		
+   </div>
+		 <br>
+   </div>
+      <hr>
+
+  <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>&copy; Emily Giron 2021</p>
+    
+   
+ 
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

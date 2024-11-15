@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	
+	<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+	<script type="text/javascript" src='index.js'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">   
+    <title>Villagers</title>
+  </head>
+  
+  <body onload="initViz();">
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="home.html"><img src="tom nook.jpg" style="width:70px; height:70px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="villagers.html">Species</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="villagers2.html">Villagers</a>
+      </li>
+       
+    </ul>
+      
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+      
+      <main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron" style="background-image: url('leaf.png');">
+      
+    <div class="container">
+        
+      <h1 class="display-3" style="background-color:white; padding:20px; text-align:center;">Villagers</h1>
+    </div>
+  </div>
+
+  <div class="container">
+  <img src="villagers.jpg" style="float:left; width:400px; height:230px; padding-right:30px;">
+  <p>In the latest Animal Crossing game, there is 400+ villagers in the game. We are going to focus on the first 391 villagers because the newest villagers
+  came out in early November 2021 and there just wasn't enough data for them to be added. In the species section, recall that all villagers are a different species.
+  With the lollipop chart below, we can see which of those villagers are the most expensive in each species on average. There is going to be certain species with less
+  villagers and some with more, depending how popular that species is to animal crossing players.
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<div id="controls">
+		<p id ="currency">Select a Currency</p>
+		<button class="tablink nav-active" onclick="openDiv(event, 'Bells'); switchView('Villager by Average bells sold')" >Bells</button>
+		<button class="tablink" onclick="openDiv(event, 'Bells'); switchView('Villager per NMTs')">NMTs</button>
+		<br>
+		
+		
+		<h3> Select a Species </h3>
+		<select id="changeSpecies"  onchange="speciesFilter(value); console.log(value);">
+			<option selected="selected">Select a Species</option>
+			<option value="All">All</option>
+			<option value="Alligator">Alligator</option>
+			<option value="Anteater">Anteater</option>
+			<option value="Bear">Bear</option>
+			<option value="Bird">Bird</option>
+			<option value="Bull">Bull</option>
+			<option value="Cat">Cat</option>
+			<option value="Chicken">Chicken</option>
+			<option value="Cow">Cow</option>
+			<option value="Cub">Cub</option>
+			<option value="Deer">Deer</option>
+			<option value="Dog">Dog</option>
+			<option value="Duck">Duck</option>
+			<option value="Eagle">Eagle</option>
+			<option value="Elephant">Elephant</option>
+			<option value="Frog">Frog</option>
+			<option value="Goat">Goat</option>
+			<option value="Gorilla">Gorilla</option>
+			<option value="Hamster">Hamster</option>
+			<option value="Hippo">Hippo</option>
+			<option value="Horse">Horse</option>
+			<option value="Kangaroo">Kangaroo</option>
+			<option value="Koala">Koala</option>
+			<option value="Lion">Lion</option>
+			<option value="Monkey">Monkey</option>
+			<option value="Mouse">Mouse</option>
+			<option value="Octopus">Octopus</option>
+			<option value="Ostrich">Ostrich</option>
+			<option value="Peguin">Peguin</option>
+			<option value="Pig">Pig</option>
+			<option value="Rabbit">Rabbit</option>
+			<option value="Rhino">Rhino</option>
+			<option value="Sheep">Sheep</option>
+			<option value="Squirrel">Squirrel</option>
+			<option value="Tiger">Tiger</option>
+			<option value="Wolf">Wolf</option>
+					
+		</select>
+		</div>
+		
+    
+    <main>
+		<div id='Bells' class='tab'> 
+			<div id = 'vizContainer'> </div>
+		
+		</div>
+		
+		
+    </main>
+      
+     
+      
+      <hr>
+
+  <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p>&copy; Emily Giron 2021</p>
+    
+   
+ 
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
